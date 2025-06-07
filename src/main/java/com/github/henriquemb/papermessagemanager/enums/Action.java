@@ -1,9 +1,9 @@
 package com.github.henriquemb.papermessagemanager.enums;
 
 public enum Action {
-    CLICK("click", "<click:.+:.+>", "</click>"),
-    SELECTOR("selector", "<selector:.+:.+>", ""),
-    NBT("nbt", "<nbt:.+:.+>", "");
+    CLICK("click", "<click:[^:>]+:[^>]+>", "<\\/click>"),
+    SELECTOR("selector", "<selector:[^>]+>", ""),
+    NBT("nbt", "<nbt:[^:>]+:[^>]+>", "");
 
     private final String name;
     private final String actionStart;

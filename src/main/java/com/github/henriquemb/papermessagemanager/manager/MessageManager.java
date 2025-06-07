@@ -12,16 +12,20 @@ public class MessageManager {
     private final String[] permissions;
     private final MiniMessage miniMessage = MiniMessage.miniMessage();
 
-    public MessageManager(String[] permissions) {
+    public MessageManager(String... permissions) {
         this.permissions = permissions;
     }
 
     public void sendMessage(CommandSender player, CommandSender target, String message) {
-        message = ColorCodeLegacy.translateLegacyCodes(message);
+        message = processMessage(player, target, message);
 
         Component component = miniMessage.deserialize(message);
 
         target.sendMessage(component);
+    }
+
+    public void sendMessage(CommandSender target, String message) {
+        sendMessage(null, target, message);
     }
 
     public void sendActionBar(CommandSender player, CommandSender target, String message) {
@@ -29,13 +33,23 @@ public class MessageManager {
 
         Component component = miniMessage.deserialize(message);
 
-        player.sendActionBar(component);
+        target.sendActionBar(component);
+    }
+
+    public void sendActionBar(CommandSender target, String message) {
+        sendActionBar(null, target, message);
     }
 
     private String processMessage(CommandSender player, CommandSender target, String message) {
+        if (player == null) {
+            message = Action.replaceAllActions(message);
+        }
+        else {
+            message = PlaceholderAPI.setPlaceholders((Player) target, message);
+            message = replaceActions(player, message);
+        }
+
         message = ColorCodeLegacy.translateLegacyCodes(message);
-        message = replaceActions(player, message);
-        message = PlaceholderAPI.setPlaceholders((Player) target, message);
 
         return message;
     }
@@ -53,6 +67,7 @@ public class MessageManager {
                 return true;
             }
         }
+
         return false;
     }
 }
