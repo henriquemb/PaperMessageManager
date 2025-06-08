@@ -41,10 +41,7 @@ public class MessageManager {
     }
 
     private String processMessage(CommandSender player, CommandSender target, String message) {
-        if (player == null) {
-            message = Action.replaceAllActions(message);
-        }
-        else {
+        if (player != null) {
             message = PlaceholderAPI.setPlaceholders((Player) target, message);
             message = replaceActions(player, message);
         }

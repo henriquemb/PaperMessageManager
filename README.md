@@ -55,7 +55,7 @@ public class MessageSender {
 }
 ```
 
-A permissão é verificada em cima do ``player`` e a mensagem é enviada para o ``target``, caso o ``player`` seja nulo, todas as ações são removidas da mensagem.
+A permissão é verificada em cima do ``player`` e a mensagem é enviada para o ``target``, caso o ``player`` seja nulo, todas as ações são enviadas normalmente.
 
 ## 🤝 Contribuição
 
