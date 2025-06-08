@@ -21,7 +21,7 @@ Para instalar e começar a utilizar é simples, basta inserir os seguintes trech
     <dependency>
         <groupId>com.github.henriquemb</groupId>
         <artifactId>papermessagemanager</artifactId>
-        <version>1.0</version>
+        <version>{versão}</version>
     </dependency>
 </dependencies>
 ```
