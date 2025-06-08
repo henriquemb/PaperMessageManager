@@ -1,6 +1,6 @@
 # 📦 Paper Message Manager
 
-O objetivo deste projeto é implementar o novo formato de mensagens que a biblioteca [Adventu API](https://docs.advntr.dev/getting-started.html) fornece através da [MiniMessage](https://docs.advntr.dev/minimessage/format.html) com o antigo formato de mensagens do Bukkit, permitindo que os desenvolvedores possam utilizar o novo formato de mensagens sem prejudicar o formato antigo.
+O objetivo deste projeto é implementar o novo formato de mensagens que a biblioteca [Adventure API](https://docs.advntr.dev/getting-started.html) fornece através da [MiniMessage](https://docs.advntr.dev/minimessage/format.html) com o antigo formato de mensagens do Bukkit, permitindo que os desenvolvedores possam utilizar o novo formato de mensagens sem prejudicar o formato antigo.
 Também foi adicionado uma verificação de permissão para envio de mensagens que sejam de ação, como por exemplo ``<click:run_command:/seed>Click</click> to show the world seed!``, as ações configuradas são [click](https://docs.advntr.dev/minimessage/format.html#click), [selector](https://docs.advntr.dev/minimessage/format.html#selector) e [nbt](https://docs.advntr.dev/minimessage/format.html#nbt).
 
 ## 🛠️ Instalação
